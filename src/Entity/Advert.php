@@ -28,12 +28,14 @@ class Advert
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * in centimes
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $sellPrice;
 
     /**
-     * @ORM\Column(type="integer")
+     * in centimes
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $rentPrice;
 
@@ -42,6 +44,11 @@ class Advert
      * @ORM\JoinColumn(nullable=false)
      */
     private $advertKind;
+
+    public function __toString()
+    {
+        return (string) $this->getTitle();
+    }
 
     public function getId(): ?int
     {
@@ -72,24 +79,30 @@ class Advert
         return $this;
     }
 
+    /*
+     * in centimes
+     */
     public function getSellPrice(): ?int
     {
         return $this->sellPrice;
     }
 
-    public function setSellPrice(int $sellPrice): self
+    public function setSellPrice(?int $sellPrice): self
     {
         $this->sellPrice = $sellPrice;
 
         return $this;
     }
 
+    /*
+     * in centimes
+     */
     public function getRentPrice(): ?int
     {
         return $this->rentPrice;
     }
 
-    public function setRentPrice(int $rentPrice): self
+    public function setRentPrice(?int $rentPrice): self
     {
         $this->rentPrice = $rentPrice;
 

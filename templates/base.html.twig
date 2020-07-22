@@ -9,18 +9,24 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div class="cover-container d-flex h-100 p-3 flex-column">
             <header class="masthead mb-auto">
                 <div class="inner">
-                    <h3 class="masthead-brand">{{ siteName }}</h3>
+                    <h3 class="masthead-brand mr-5">{{ siteName }}</h3>
                     <nav class="nav nav-masthead justify-content-center">
-                        <a class="nav-link active" href="#">Home</a>
-                        <a class="nav-link" href="#">Liste des annonces</a>
-                        <a class="nav-link" href="#">Création d'annonces</a>
+                        <a class="nav-link" href="{{ path('home') }}">Home</a>
+                        <a class="nav-link" href="{{ path('advert_index') }}">Liste des annonces</a>
+                        <a class="nav-link" href="{{ path('advert_new') }}">Création d'annonces</a>
                     </nav>
                 </div>
             </header>
+        </div>
+
+        <div class="body-container">
             {% block body %}{% endblock %}
+        </div>
+
+        <div class="cover-container d-flex h-100 p-3 flex-column">
             <footer class="mastfoot mt-auto">
                 <div class="inner">
                     <p>Website by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">@Corenbla,</a> Cover template by <a href="https://twitter.com/mdo">@mdo</a>.</p>

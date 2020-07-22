@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Advert index{% endblock %}
+
+{% block body %}
+    <h1>Liste des annonces</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for advert in adverts %}
+            <tr>
+                <td>{{ advert.title }}</td>
+                <td>{{ advert.description }}</td>
+                {% if advert.rentPrice is not null %}
+                    <td>{{ advert.rentPrice|toEuros }}</td>
+                {% elseif advert.sellPrice is not null %}
+                    <td>{{ advert.sellPrice|toEuros }}</td>
+                {% else %}
+                    <td>N/A</td>
+                {% endif %}
+                <td>
+                    <div class="btn-group" role="group">
+                        <a href="{{ path('advert_show', {'id': advert.id}) }}" class="btn btn-primary" >Voir</a>
+                        <a href="{{ path('advert_edit', {'id': advert.id}) }}" class="btn btn-secondary">Éditer</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune annonce trouvée.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('advert_new') }}" class="btn btn-success btn-lg">Créer une nouvelle annonce</a>
+{% endblock %}

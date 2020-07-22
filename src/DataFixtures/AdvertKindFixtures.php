@@ -16,8 +16,7 @@ class AdvertKindFixtures extends BaseFixture
             } elseif ($i === 1) {
                 $title = AdvertKind::SELL_TYPE_TITLE;
             } else {
-                // Random word if more than 2 AdvertKind is created
-                $title = ucfirst($this->faker->word);
+                throw new \LogicException('Only 2 Advert kind can be set up right now.');
             }
 
             return (new AdvertKind())
