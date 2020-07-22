@@ -3,24 +3,24 @@
 namespace App\DataFixtures;
 
 
-use App\Entity\AdvertType;
+use App\Entity\AdvertKind;
 use Doctrine\Persistence\ObjectManager;
 
-class AdvertTypeFixtures extends BaseFixture
+class AdvertKindFixtures extends BaseFixture
 {
     protected function loadData(ObjectManager $manager): void
     {
-        $this->createMany(2, 'advertTypes', function ($i) {
+        $this->createMany(2, 'advertKinds', function ($i) {
             if ($i === 0) {
-                $title = AdvertType::LOCATION_TYPE_TITLE;
+                $title = AdvertKind::LOCATION_TYPE_TITLE;
             } elseif ($i === 1) {
-                $title = AdvertType::SELL_TYPE_TITLE;
+                $title = AdvertKind::SELL_TYPE_TITLE;
             } else {
-                // Random word if more than 2 AdvertType is created
+                // Random word if more than 2 AdvertKind is created
                 $title = ucfirst($this->faker->word);
             }
 
-            return (new AdvertType())
+            return (new AdvertKind())
                 ->setTitle($title)
             ;
         });

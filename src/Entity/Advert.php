@@ -38,10 +38,10 @@ class Advert
     private $rentPrice;
 
     /**
-     * @ORM\ManyToOne(targetEntity=AdvertType::class)
+     * @ORM\ManyToOne(targetEntity=AdvertKind::class)
      * @ORM\JoinColumn(nullable=false)
      */
-    private $advertType;
+    private $advertKind;
 
     public function getId(): ?int
     {
@@ -96,14 +96,14 @@ class Advert
         return $this;
     }
 
-    public function getAdvertType(): ?AdvertType
+    public function getAdvertKind(): ?AdvertKind
     {
-        return $this->advertType;
+        return $this->advertKind;
     }
 
-    public function setAdvertType(?AdvertType $advertType): self
+    public function setAdvertKind(?AdvertKind $advertKind): self
     {
-        $this->advertType = $advertType;
+        $this->advertKind = $advertKind;
 
         return $this;
     }

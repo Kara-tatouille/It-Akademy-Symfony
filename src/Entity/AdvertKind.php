@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\AdvertTypeRepository;
+use App\Repository\AdvertKindRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=AdvertTypeRepository::class)
+ * @ORM\Entity(repositoryClass=AdvertKindRepository::class)
  */
-class AdvertType
+class AdvertKind
 {
     public const LOCATION_TYPE_TITLE = 'Location';
     public const SELL_TYPE_TITLE = 'Vente';

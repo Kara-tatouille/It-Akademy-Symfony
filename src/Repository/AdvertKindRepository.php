@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\AdvertType;
+use App\Entity\AdvertKind;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method AdvertType|null find($id, $lockMode = null, $lockVersion = null)
- * @method AdvertType|null findOneBy(array $criteria, array $orderBy = null)
- * @method AdvertType[]    findAll()
- * @method AdvertType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method AdvertKind|null find($id, $lockMode = null, $lockVersion = null)
+ * @method AdvertKind|null findOneBy(array $criteria, array $orderBy = null)
+ * @method AdvertKind[]    findAll()
+ * @method AdvertKind[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AdvertTypeRepository extends ServiceEntityRepository
+class AdvertKindRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, AdvertType::class);
+        parent::__construct($registry, AdvertKind::class);
     }
 
     // /**
-    //  * @return AdvertType[] Returns an array of AdvertType objects
+    //  * @return AdvertKind[] Returns an array of AdvertKind objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class AdvertTypeRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?AdvertType
+    public function findOneBySomeField($value): ?AdvertKind
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')
