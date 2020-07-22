@@ -5,7 +5,23 @@
         <h1 class="cover-heading">Trouvez le Bon Appart.</h1>
         <p class="lead">Trouvez le bon appartement grâce à notre intelligence artificielle quantique codée en CSS. Résultats <span class="text-muted">non</span> garantis.</p>
         <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary">Oh oui alors !</a>
+            <a href="{{ path('contact') }}" class="btn btn-lg btn-secondary">Je prend contact !</a>
         </p>
     </main>
+
+    <section class="inner cover">
+        <h2 class="mb-2">Derniers messages utilisateurs :</h2>
+        <div>
+            {% for contact in contacts %}
+                <div class="row">
+                    <p class="col-md-8">
+                        {{ contact.content }}
+                    </p>
+                    <p class="col-md-4 text-muted">
+                        - {{ contact.firstName }} {{ contact.lastName|upper }} ({{ contact.email }})
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
