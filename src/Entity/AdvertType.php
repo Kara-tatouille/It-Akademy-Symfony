@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class AdvertType
 {
+    public const LOCATION_TYPE_TITLE = 'Location';
+    public const SELL_TYPE_TITLE = 'Vente';
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

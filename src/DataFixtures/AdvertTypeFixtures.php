@@ -12,9 +12,9 @@ class AdvertTypeFixtures extends BaseFixture
     {
         $this->createMany(2, 'advertTypes', function ($i) {
             if ($i === 0) {
-                $title = 'Location';
+                $title = AdvertType::LOCATION_TYPE_TITLE;
             } elseif ($i === 1) {
-                $title = 'Vente';
+                $title = AdvertType::SELL_TYPE_TITLE;
             } else {
                 // Random word if more than 2 AdvertType is created
                 $title = ucfirst($this->faker->word);
